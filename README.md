@@ -33,6 +33,8 @@ Copy the `wireless_config` file to your OpenWrt device and replace the existing 
 ```sh
 scp config/wireless_config root@your-openwrt-device:/etc/config/wireless
 ssh root@your-openwrt-device
+opkg update
+opkg install kmod-mt7921u
 uci commit wireless
 wifi reload
 ```
@@ -49,7 +51,6 @@ chmod +x /root/wifi_failover.sh
 # Install required packages
 opkg update
 opkg install iputils-arping
-opkg install kmod-mt7921u
 
 # Add to startup
 echo "/root/wifi_failover.sh &" >> /etc/rc.local
