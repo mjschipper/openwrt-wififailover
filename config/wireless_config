@@ -1,0 +1,35 @@
+config wifi-device 'radio0'
+    option type 'mac80211'
+    option hwmode '11a'
+    option path 'pci0000:00/0000:00:00.0'
+    option country 'AU'  # Set to Australia region
+    option legacy_rates '0'
+
+config wifi-iface 'default_radio0'
+    option device 'radio0'
+    option network 'lan'
+    option mode 'ap'
+    option ssid 'YourSSIDHere'
+    option encryption 'sae-mixed'
+    option key 'YourPasswordHere'
+    option ieee80211w '1'  # PMF optional
+    option wpa_disable_eapol_key_retries '1'
+    option wmm '1'
+
+config wifi-device 'radio1'
+    option type 'mac80211'
+    option hwmode '11g'
+    option path 'platform/10180000.wmac'
+    option country 'AU'  # Set to Australia region
+    option legacy_rates '0'
+
+config wifi-iface 'default_radio1'
+    option device 'radio1'
+    option network 'lan'
+    option mode 'ap'
+    option ssid 'YourSSIDHere'
+    option encryption 'sae-mixed'
+    option key 'YourPasswordHere'
+    option ieee80211w '1'  # PMF optional
+    option wpa_disable_eapol_key_retries '1'
+    option wmm '1'
