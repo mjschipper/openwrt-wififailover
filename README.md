@@ -49,7 +49,6 @@ ssh root@your-openwrt-device
 chmod +x /root/wifi_failover.sh
 
 # Install required packages
-opkg update
 opkg install iputils-arping
 
 # Add to startup
