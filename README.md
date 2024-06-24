@@ -46,6 +46,11 @@ scp scripts/wifi_failover.sh root@your-openwrt-device:/root/
 ssh root@your-openwrt-device
 chmod +x /root/wifi_failover.sh
 
+# Install required packages
+opkg update
+opkg install iputils-arping
+opkg install kmod-mt7921u
+
 # Add to startup
 echo "/root/wifi_failover.sh &" >> /etc/rc.local
 ```
